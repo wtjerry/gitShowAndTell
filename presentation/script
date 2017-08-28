@@ -15,6 +15,7 @@ TOC:
 started by Linus Torvalds for the Linux kernel
 show git README
 git is a distributed vcs => NO "master server", everyone has the full repository with the whole history (up to the last fetch)
+everyone can now git clone https://github.com/wtjerry/gitShowAndTell.git
 
 
 ## most used git commands
@@ -31,6 +32,7 @@ checkout ~ checkout (done automatically)
 merge / rebase ~ merge back
 
 ### working with remotes
+always pull before push!
 fetch doesn't exist
 pull ~ get latest
 push ~ checkin
@@ -99,6 +101,7 @@ follow this structure a bit arround and play with it.
 show reflog and quickly explain how it can rescue you when "git messed up"
 
 ### push, pull, fetch
+always pull before push!
 are doing a local branch to remote branch mapping -> pushing = pushing a certain branch -> not all local branches are pushed
 fetch = get whole commit graph but to not update refs 
 pull = fetch & merge -> merge remote branch into current branch

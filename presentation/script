@@ -1,0 +1,39 @@
+# This is the script we try following when doing the git show and tell
+
+
+TOC:
+-intro
+-most used git commands
+-git is just a fancy graph manipulator
+-what is a branch?
+-what is a commit and what does it consist of? 
+
+
+## intro
+started by Linus Torvalds for the Linux kernel
+show git README
+git is a distributed vcs => NO "master server", everyone has the full repository with the whole history (up to the last fetch)
+
+
+## most used git commands
+quickly look at those commands and which commands would be similar
+
+### adding content
+add / reset (/ clean) ~ include / exclude
+commit ~ checkin
+explain: working dir, staging area, repository
+
+### branching
+branch ~ branch
+checkout ~ checkout (done automatically)
+merge / rebase ~ merge back
+
+### working with remotes
+fetch doesn't exist
+pull ~ get latest
+push ~ checkin
+
+### misc
+clone ~ doesn't really exist (get latest)
+init ~ ? create repository
+

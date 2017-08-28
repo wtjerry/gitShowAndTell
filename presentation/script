@@ -5,6 +5,7 @@ TOC:
 -intro
 -most used git commands
 -git is just a fancy graph manipulator
+-the mysteries of the .git directory
 -what is a branch?
 -what is a commit and what does it consist of? 
 
@@ -41,11 +42,29 @@ init ~ ? create repository
 ## git is just a fancy graph manipulator
 Show a picture of a git graph like this one:
 
-54f7 <-- db03 <-- ???? <-- ????
+54f7 <-- db03 <-- 1ed9 <-- ????
   \-- ???? <-- ????-/
 
 Quickly explain HEAD as "the last commit you are currently basing on".
 When using commit you just write the content of the staging area into a new commit which references the current HEAD as its parent.
 Commit is the "only" party manipulating this graph (only adding)
 Everyone else will only manipulate some pointers to the commits (like a branch creates a new ref or checkout moves the HEAD)
+
+
+## the mysteries of the .git directory
+show the git dir:
+things in here are most of the time only "valid" locally
+config: contains configs for this local repository (not globally for all local repos)
+HEAD: contains a commit hash (detached head) or a .refs/heads/xyz hash (normal mode)
+hooks: scripts to be called for certain moments in time (like precommit stylecop etc)
+index: file which contains the current staging area (formerly known as index) information. The actual file contents are already in objects (done by git add)
+logs: folder contains log as to how the HEAD / other refs have been moved.
+objects: folder contains all objects. Every version of any file ever added to the repo is an object in here (or in a pack) + all other types of objects like commit, tree, tag, (blob) -> see below.
+objects/pack: directory of again zipped object directory -> space saving, triggered through git gc (chron job)
+refs: refs and tags
+
+
+## what is a branch
+we should already have seen the git graph and its 'branches'
+in git a branch is nothing but a pointer to the tip of such a 'branch'. A pointer to the last commit in such a 'branch'
 

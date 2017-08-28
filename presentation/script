@@ -41,6 +41,7 @@ init ~ ? create repository
 
 ## git is just a fancy graph manipulator
 Show a picture of a git graph like this one:
+in git each commit (and more stuff) is represented by a hash. More to that later.
 
 54f7 <-- db03 <-- 1ed9 <-- ????
   \-- ???? <-- ????-/
@@ -63,8 +64,17 @@ objects: folder contains all objects. Every version of any file ever added to th
 objects/pack: directory of again zipped object directory -> space saving, triggered through git gc (chron job)
 refs: refs and tags
 
+### hash
+quick deep dive: show that everything is handled as a hash:
+we already know that once something was added to the staging area with add, it will be saved as a git object.
+do: create file with content "hello world" (echo "hello world" >. check objects dir. git add file. check objects dir again -> one new file, remember hash.
+printf "blob 12\000hello world\n" | sha1sum
+show that this is the same hash
 
-## what is a branch
+
+## what is a branch?
 we should already have seen the git graph and its 'branches'
-in git a branch is nothing but a pointer to the tip of such a 'branch'. A pointer to the last commit in such a 'branch'
+in git a branch is nothing but a pointer to the tip of such a 'branch'. A pointer to the last commit in such a 'branch'.
+do: checkout an early commit (show detached HEAD). Create a branch (show git log showing that commit with the branch name). do some changes and commit. show git dir files: HEAD, refs/heads/master, refs/heads/branchName.
+
 

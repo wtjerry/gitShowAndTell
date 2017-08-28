@@ -8,6 +8,7 @@ TOC:
 -the mysteries of the .git directory
 -what is a branch?
 -what is a commit and what does it consist of? 
+-misc
 
 
 ## intro
@@ -72,9 +73,33 @@ printf "blob 12\000hello world\n" | sha1sum
 show that this is the same hash
 
 
+
 ## what is a branch?
 we should already have seen the git graph and its 'branches'
 in git a branch is nothing but a pointer to the tip of such a 'branch'. A pointer to the last commit in such a 'branch'.
 do: checkout an early commit (show detached HEAD). Create a branch (show git log showing that commit with the branch name). do some changes and commit. show git dir files: HEAD, refs/heads/master, refs/heads/branchName.
+use checkout a bit to checkout both branches one after the other.
+explain that the only thing done now is: change HEAD pointer and update working dir
 
+
+
+## what is a commit and what does it consist of?
+quickly explain blob, tree, commit, tag
+do: git log -> last commit id (eg b641). cat-file -t id. (t for type) cat-file -p (p for print)-> content should look familiar. cat-file tree (maybe first -p to show it is a tree) -> see this thing is a folder structure (040000 directory) [mode, type, hash, name]
+follow this structure a bit arround and play with it.
+- pick a random object in object dir and print it
+- pick a random branch and print it
+- do not use git log but cat-file with previous commit hash
+
+
+
+## misc
+
+### reflog
+show reflog and quickly explain how it can rescue you when "git messed up"
+
+### push, pull, fetch
+are doing a local branch to remote branch mapping -> pushing = pushing a certain branch -> not all local branches are pushed
+fetch = get whole commit graph but to not update refs 
+pull = fetch & merge -> merge remote branch into current branch
 

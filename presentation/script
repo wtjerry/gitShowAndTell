@@ -37,3 +37,15 @@ push ~ checkin
 clone ~ doesn't really exist (get latest)
 init ~ ? create repository
 
+
+## git is just a fancy graph manipulator
+Show a picture of a git graph like this one:
+
+54f7 <-- db03 <-- ???? <-- ????
+  \-- ???? <-- ????-/
+
+Quickly explain HEAD as "the last commit you are currently basing on".
+When using commit you just write the content of the staging area into a new commit which references the current HEAD as its parent.
+Commit is the "only" party manipulating this graph (only adding)
+Everyone else will only manipulate some pointers to the commits (like a branch creates a new ref or checkout moves the HEAD)
+

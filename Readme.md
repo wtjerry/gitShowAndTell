@@ -16,8 +16,11 @@ This repository WILL NOT:
 - pigz
 - cat, cd, cp
 - editor
-- in your config: alias.lg1=log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' -n 30
-- or just use `git log --all --graph --oneline -n 30`
+- config
+  - lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' -n 30
+  - lg = !"git lg1 --all"
+  - graphviz = "!f() { echo 'digraph git {' ; git log --pretty='format:  %h -> { %p };' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo ; git log --pretty='format:  \"%h\" [label=\"%h: %s\"];' \"$@\" ; echo '}'; }; f"
+git graphviz | dot -Tpng -o a.png
 
 
 # intro
@@ -45,7 +48,7 @@ This repository WILL NOT:
 - Directed Acyclic Graph
 - <explain graph & DAG>
 - git just manipulates a DAG: each commit is one node
-**********- <show image commit graph with branches & merges>
+- <show image commit graph & `git lg` for branch names>
 - <ref https://learngitbranching.js.org/>
 
 ## what is a commit?

@@ -1,0 +1,11 @@
+digraph git {
+  splines = ortho;
+  rankdir=LR;
+  node [ shape=box ];
+  "working dir" [label="Working dir: everything you see in your directory"];
+  "staging area" [label="Staging area / index: the last added state of your files"];
+  "repository" [label="the commited state of your files"];
+  "working dir" -> "staging area"[xlabel="add", minlen=4];
+  "staging area" -> "working dir"[xlabel="reset", minlen=4];
+  "staging area" -> "repository"[xlabel="commit", minlen=4];
+}

@@ -45,7 +45,7 @@ This repository WILL NOT:
 - Directed Acyclic Graph
 - <explain graph & DAG>
 - git just manipulates a DAG: each commit is one node
-*****- <show image commit graph with branches & merges>
+**********- <show image commit graph with branches & merges>
 - <ref https://learngitbranching.js.org/>
 
 ## what is a commit?
@@ -105,7 +105,7 @@ This repository WILL NOT:
   
 ## what is the working directory / index?
 - this time it is not just a file, jk it is, but it isnt as easily readable
-*****- <show image "working dir, staging area, repository & commands">
+**********- <show image "working dir, staging area, repository & commands">
 - <show
   1. `git add aFile`
   2. `git status` # file is in staging area, btw file is also under .git/objects
@@ -128,54 +128,68 @@ This repository WILL NOT:
 
 # most used git commands
 
-status
+**status**
+
 prints the current branch, changes in working dir and changes in index
 
-add
+**add**
+
 add files / hunks of files from working dir to index / staging area
 
-commit
+**commit**
+
 create a commit with content of index and parent HEAD, then move head to new commit
 
-branch
+**branch**
+
 list create or delete branches
 
-log
+**log**
+
 lists commits
 can be configured to produce nice graphs
 
-stash
+**stash**
+
 stashes your working dir changes away. basically a "dirty commit".
 can be pop (-ped to appy and delete stash) or apply (-ed to just apply) later onto another commit
 
-checkout
+**checkout**
+
 change working dir, eg checkout a branch / a tag / a file
 eg can be used to overwrite a single file with one in a branch / different version
 
-reset
+**reset**
+
 either copy content of other version to index
 or move branch pointer to different commit
 
-rebase
+**rebase**
+
 modify the commit graph by re-basing / changing the parent commit of a branch
 code wont change (if there are no conflicts) but hash will (bc of diff parent commit)
 
-merge
-merge 2 branches back into one. creates a new commit with the merged content and *2* parents
+**merge**
 
-fetch
+merge 2 branches back into one. creates a new commit with the merged content and **2** parents
+
+**fetch**
+
 fetches changes from a remote repository
 new commits in branch, new / deleted branches, new / deleted tags
 will not change any local branch (only remote tracking)
 
-pull
+**pull**
+
 will first do a fetch and then (based on configuration, default merge) a merge or rebase with your local branch
 
-push
+**push**
+
 pushes changes to a remote repository
 new commits in branch, new / deleted branches, new / deleted tags
 
-reflog
+**reflog**
+
 a log containing all changes to references.
 eg branch was moved / updated
 

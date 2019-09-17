@@ -200,6 +200,7 @@ eg branch was moved / updated
 # some more things to check out:
 - https://git-scm.com/book/en/v2
 - https://learngitbranching.js.org/
+- how to write a good commit message: https://chris.beams.io/posts/git-commit/
 - configs:
   1. aliases
   2. merge / diff tool

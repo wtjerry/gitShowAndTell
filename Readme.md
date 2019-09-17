@@ -58,7 +58,7 @@ git graphviz | dot -Tpng -o a.png
   1. current commit id (hash)
   2. .git/objects dir
   3. cd to first 2 chars of hash
-  4. `cat hash | pigz` or `git cat-file -p hash`>
+  4. `cat hash | pigz -d` or `git cat-file -p hash`>
 - commit contains:
   - tree hash
   - parent (can be multiple eg merge)
@@ -106,9 +106,9 @@ git graphviz | dot -Tpng -o a.png
   2. we just changed the branch
   3. at least almost: we didnt update the working directory>
   
-## what is the working directory / index?
+## what is the staging area / index?
 - this time it is not just a file, jk it is, but it isnt as easily readable
-**********- <show image "working dir, staging area, repository & commands">
+- <show image "working dir, staging area, repository & commands">
 - <show
   1. `git add aFile`
   2. `git status` # file is in staging area, btw file is also under .git/objects

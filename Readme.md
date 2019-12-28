@@ -58,7 +58,7 @@ git graphviz | dot -Tpng -o a.png
   1. current commit id (hash)
   2. .git/objects dir
   3. cd to first 2 chars of hash
-  4. `cat hash | pigz -d` or `git cat-file -p hash`>
+  4. `cat hash | pigz -d` OR `git cat-file -p hash`> OR `printf "\x1f\x8b\x08\x00\x00\x00\x00\x00" | cat - GIT_OBJECT_HERE | gzip -d`
 - commit contains:
   - tree hash
   - parent (can be multiple eg merge)

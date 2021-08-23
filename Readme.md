@@ -6,7 +6,7 @@ This repository WILL:
 - help you match git commands to ways you want to manipulating your repository
 
 This repository WILL NOT:
-- take over the decision on what is the correct branching strategy for you
+- make the decision what is the correct branching strategy for you
 - explain how to interact with Github, Gitlab, tfs, PullRequests etc.
 - explain SourceTree, GitExtensions, GitKraken, Fork or any GUI tool for that matter 
 
@@ -35,7 +35,7 @@ git graphviz | dot -Tpng -o a.png
 
 ## git
 - started by Linus Torvalds for the Linux kernel
-- <show iamge git README>
+- <show image git README>
 - git is a distributed vcs => NO "master server", everyone has the full repository with the whole history (up to the last fetch)
 
 ## if interactive
@@ -50,6 +50,9 @@ git graphviz | dot -Tpng -o a.png
 - git just manipulates a DAG: each commit is one node
 - <show image commit graph & `git lg` for branch names>
 - <ref https://learngitbranching.js.org/>
+- not just the commit tree is a DAG, but also the contents (also each file is just a node)
+- <show image file_graph>
+- it's true, just as "everything is a file" is true for git. But maybe not really enough to understand git. That's why we go on..
 
 ## what is a commit?
 - multiple commits make up a commit graph, but what actually is a commit?

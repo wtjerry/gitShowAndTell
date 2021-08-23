@@ -35,7 +35,7 @@ git graphviz | dot -Tpng -o a.png
 
 ## git
 - started by Linus Torvalds for the Linux kernel
-- <show image git README>
+- >> show image git README
 - git is a distributed vcs => NO "master server", everyone has the full repository with the whole history (up to the last fetch)
 
 ## if interactive
@@ -46,18 +46,18 @@ git graphviz | dot -Tpng -o a.png
 
 ## git is just a DAG
 - Directed Acyclic Graph
-- <explain graph & DAG>
+- >> explain graph & DAG
 - git just manipulates a DAG: each commit is one node
-- <show image commit graph & `git lg` for branch names>
-- <ref https://learngitbranching.js.org/>
+- >> show image commit graph & `git lg` for branch names
+- >> ref https://learngitbranching.js.org/
 - not just the commit tree is a DAG, but also the contents (also each file is just a node)
-- <show image file_graph>
+- >> show image file_graph
 - it's true, just as "everything is a file" is true for git. But maybe not really enough to understand git. That's why we go on..
 
 ## what is a commit?
 - multiple commits make up a commit graph, but what actually is a commit?
 - a commit is just a compressed file
-- <show
+- >> show
   1. current commit id (hash)
   2. .git/objects dir
   3. cd to first 2 chars of hash
@@ -72,9 +72,9 @@ git graphviz | dot -Tpng -o a.png
 
 ## what is a tree?
 - a tree is just a compressed file
-- <show
+- >> show
   1. tree id in current commit
-  2. `git cat-file -d tree-id`>
+  2. `git cat-file -d tree-id`
 - tree contains:
   - permissions
   - type of content
@@ -85,14 +85,14 @@ git graphviz | dot -Tpng -o a.png
 
 ## what is a blob?
 - a blob is just a compressed file containing the a "real" files content
-- <show
+- >> show
   1. blob id in tree in current commit
-  2. `git cat-file -d blob-id`>
+  2. `git cat-file -d blob-id`
 
 ## what is a branch / HEAD?
 - a branch is just a file pointing to a commit
 - the HEAD is basically your current location on the graph. if you create a commit it has HEAD as it's parent
-- <show
+- >> show
   1. `cd .git/`
   2. `git lg`
   3. `cat HEAD` # our current location
@@ -101,18 +101,18 @@ git graphviz | dot -Tpng -o a.png
   6. `cp refs/heads/master refs/heads/myFancyBranch` # you just created a branch
   7. `git branch`
   8. edit refs/heads/myFancyBranch
-  9. `git branch` # see it now points somewhere else>
+  9. `git branch` # see it now points somewhere else
 - normal tags works mostly the same
-- <show `git checkout other-branch`>
-- <show
+- >> show `git checkout other-branch`
+- >> show
   1. edit .git/HEAD
   2. we just changed the branch
-  3. at least almost: we didnt update the working directory>
+  3. at least almost: we didnt update the working directory
   
 ## what is the staging area / index?
 - this time it is not just a file, jk it is, but it isnt as easily readable
-- <show image "working dir, staging area, repository & commands">
-- <show
+- >> show image "working dir, staging area, repository & commands"
+- >> show
   1. `git add aFile`
   2. `git status` # file is in staging area, btw file is also under .git/objects
   3. `git reset aFile`
